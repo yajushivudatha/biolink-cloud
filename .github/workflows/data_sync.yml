@@ -1,26 +1,23 @@
 name: Supabase Data Sync
 on:
-  # Triggers:
   schedule:
-    - cron: '0 12 * * *'  # Daily at 12PM UTC
+    - cron: '0 12 * * *'
   push:
     branches: [ main ]
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch:
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 10  # Prevent hanging
+    timeout-minutes: 10
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: "3.10"
-        cache: 'pip'  # Cache dependencies
 
     - name: Install dependencies
       run: |
@@ -31,18 +28,16 @@ jobs:
       env:
         SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
         SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-      run: |
-        python fetch_data.py
-        echo "Sync completed at $(date)"
+      run: python fetch_data.py
 
-    - name: Notify on failure
-      if: failure()
+    - name: Notify on failure (PRs only)
+      if: failure() && github.event_name == 'pull_request'
       uses: actions/github-script@v6
       with:
         script: |
           await github.rest.issues.createComment({
-            issue_number: context.issue.number,
+            issue_number: context.payload.pull_request.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: '⚠️ Data sync failed! Check [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
+            body: `⚠️ Data sync failed in ${context.workflow}!\n\nDetails: ${context.server_url}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.run_id}`
           })
