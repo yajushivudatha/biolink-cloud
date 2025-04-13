@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-2">
           <Activity className="h-6 w-6" />
-          <h1 className="text-2xl font-bold">EpiWatch Globe</h1>
+          <h1 className="text-2xl font-bold">Biolink Cloud</h1>
         </div>
         <div className="flex items-center gap-3">
           <Popover>
@@ -21,7 +21,7 @@ const Header = () => {
             <PopoverContent className="w-80">
               <div className="grid gap-4">
                 <div className="space-y-2">
-                  <h4 className="font-medium leading-none">About EpiWatch Globe</h4>
+                  <h4 className="font-medium leading-none">About Biolink Cloud</h4>
                   <p className="text-sm text-muted-foreground">
                     This visualization shows current disease hotspots and predicts potential future outbreaks based on pattern recognition and epidemiological modeling.
                   </p>

@@ -87,7 +87,7 @@ const Index = () => {
       </main>
       
       <footer className="bg-slate-800 text-white/70 p-4 text-center text-sm">
-        <p>EpiWatch Globe - Disease Surveillance and Prediction Platform</p>
+        <p>Biolink Cloud - Disease Surveillance and Prediction Platform</p>
         <p className="text-xs mt-1">© 2025 • Data is simulated for demonstration purposes</p>
       </footer>
     </div>
