@@ -4,7 +4,7 @@ import { Disease } from '../lib/types';
 import { getDiseaseSummary } from '../lib/mock-data';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Virus, Map, TrendingUp, RefreshCw, AlertTriangle, Building } from "lucide-react";
+import { Activity, Map, TrendingUp, RefreshCw, AlertTriangle, Building } from "lucide-react";
 
 interface StatisticsPanelProps {
   selectedDisease: Disease;
@@ -35,7 +35,7 @@ const StatisticsPanel = ({ selectedDisease }: StatisticsPanelProps) => {
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Virus className="h-5 w-5 text-medical-purple" />
+                  <Activity className="h-5 w-5 text-medical-purple" />
                   Current Cases
                 </CardTitle>
               </CardHeader>

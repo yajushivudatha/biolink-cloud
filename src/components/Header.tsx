@@ -1,5 +1,5 @@
 
-import { Virus, Info } from "lucide-react";
+import { Activity, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
@@ -8,7 +8,7 @@ const Header = () => {
     <header className="bg-gradient-to-r from-medical-darkPurple to-medical-purple p-4 text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <Virus className="h-6 w-6" />
+          <Activity className="h-6 w-6" />
           <h1 className="text-2xl font-bold">EpiWatch Globe</h1>
         </div>
         <div className="flex items-center gap-3">
