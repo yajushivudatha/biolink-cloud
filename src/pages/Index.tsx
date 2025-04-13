@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import GlobeContainer from '@/components/GlobeContainer';
@@ -7,7 +6,7 @@ import { diseaseData } from '@/lib/mock-data';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { ChevronDown } from 'lucide-react';
+import { Activity, ChevronDown } from 'lucide-react';
 
 const Index = () => {
   const [selectedDiseaseId, setSelectedDiseaseId] = useState(diseaseData[0].id);
