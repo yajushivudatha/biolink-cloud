@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Disease visualization specific colors
+				hotspot: {
+					mild: '#FEC6A1',
+					moderate: '#F97316',
+					severe: '#ea384c',
+				},
+				prediction: {
+					low: '#FEF7CD',
+					medium: '#FDE1D3',
+					high: '#FFDEE2',
+				},
+				medical: {
+					blue: '#0EA5E9',
+					purple: '#9b87f5',
+					darkPurple: '#7E69AB',
 				}
 			},
 			borderRadius: {
@@ -84,11 +101,31 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-hotspot': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1)',
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.05)',
+					},
+				},
+				'rotate-globe': {
+					'0%': {
+						transform: 'rotate(0deg)',
+					},
+					'100%': {
+						transform: 'rotate(360deg)',
+					},
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-hotspot': 'pulse-hotspot 2s ease-in-out infinite',
+				'rotate-globe': 'rotate-globe 120s linear infinite',
 			}
 		}
 	},
