@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import GlobeContainer from '@/components/GlobeContainer';
@@ -161,7 +162,7 @@ const Index = () => {
               <p className="text-lg font-medium text-white">Biolink Cloud</p>
             </div>
             <p className="mb-2">Disease Surveillance and Prediction Platform</p>
-            <p className="text-xs">© 2025 • Data is simulated for demonstration purposes</p>
+            <p className="text-xs">© 2025 • Created by Yajushi Vudatha • Data is simulated for demonstration purposes</p>
           </div>
         </div>
       </footer>
@@ -170,3 +171,4 @@ const Index = () => {
 };
 
 export default Index;
+
